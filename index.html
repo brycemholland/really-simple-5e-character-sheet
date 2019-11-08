@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Really Simple 5e Character</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  </head>
+  <body>
+
+    <div id="normal-info">
+      <h1 id="character-name"></h1>
+      <h3 id="race-and-class"></h3>
+      <div class="stat-container">
+        <div class="stat">
+          <span id="hp" class="stat-value"></span>
+          <span id="max-hp" class="stat-subvalue"></span>
+          <span class="stat-name">HP</span>
+          <span id="hp-down" class="hp-button">-</span>
+          <span id="hp-up" class="hp-button">+</span>
+        </div>
+        <div class="stat">
+          <span id="ac" class="stat-value"></span>
+          <span id="bonus-ac" class="stat-subvalue"></span>
+          <span class="stat-name">AC</span>
+        </div>
+      </div>
+      <div class="ability-container">
+        <div class="ability"><span id="str" class="ability-score"></span><span class="ability-name"> Str</span></div>
+        <div class="ability"><span id="dex" class="ability-score"></span><span class="ability-name"> Dex</span></div>
+        <div class="ability"><span id="con" class="ability-score"></span><span class="ability-name"> Con</span></div>
+        <div class="ability"><span id="int" class="ability-score"></span><span class="ability-name"> Int</span></div>
+        <div class="ability"><span id="wis" class="ability-score"></span><span class="ability-name"> Wis</span></div>
+        <div class="ability"><span id="cha" class="ability-score"></span><span class="ability-name"> Cha</span></div>
+      </div>
+      <p id="proficiencies"></p>
+    </div>
+
+    <div id="special-info">
+      <div id="equipment-list" class="list-container hidden">
+        <p class="list-header">Equipment</p>
+        <ul id="equipment"></ul>
+      </div>
+      <div id="feature-list" class="list-container hidden">
+        <p class="list-header">Features</p>
+        <ul id="features"></ul>
+      </div>
+      <div id="spell-list" class="list-container hidden">
+        <p class="list-header">Spells</p>
+        <ul id="spells"></ul>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="spells.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

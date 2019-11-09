@@ -5,7 +5,17 @@ html, body{
   margin: 0;
   padding: 0.5em;
 }
-
+input[type="text"]{
+  background-color: transparent;
+  border: none;
+  color: #504740;
+  font-size: 2em;
+  font-weight: bold;
+  outline: none;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+}
 h1{
   font-size: 2em;
   line-height: 1em;

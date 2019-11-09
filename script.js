@@ -1,3 +1,9 @@
+const generator1 = NameGen.compile("s")
+const generator2 = NameGen.compile("ss")
+const generator3 = NameGen.compile("sss")
+const name_options = [generator1, generator2, generator3]
+const starting_name = name_options[Math.floor(Math.random() * name_options.length)]
+
 const callback = function(){
 
   function shuffle(a) {
@@ -703,7 +709,7 @@ const callback = function(){
 
   }
   character.max_hp = character.hp
-  character.name = "Character Name"
+  character.name = starting_name.toString()
 
   // figure out AC
   const shields = character.armor.filter(this_armor => this_armor.type == 'shield')
@@ -732,7 +738,7 @@ const callback = function(){
   }
 
   // place info in DOM
-  document.getElementById('character-name').innerHTML = character.name
+  document.getElementById('character-name').value = character.name
   document.getElementById('race-and-class').innerHTML = character.race+' '+character.class
   document.getElementById('hp').innerHTML = character.hp
   document.getElementById('max-hp').innerHTML = '/'+character.max_hp
@@ -799,7 +805,7 @@ const callback = function(){
   }
 
   // listen for click events
-  document.addEventListener('click', function (event) {
+  document.addEventListener('click', function(event){
 
     if (event.target.matches('.hp-button')){
       if (event.target.matches('#hp-down')){
@@ -815,6 +821,11 @@ const callback = function(){
       document.getElementById('hp').innerHTML = character.hp
     }
 
+  })
+
+  const $character_name = document.getElementById('character-name')
+  $character_name.addEventListener('focusout', function(event){
+    character.name = $character_name.value
   })
 
 }
